@@ -77,7 +77,6 @@ contract Quiz{
         if (keccak256(abi.encodePacked(quizzes[quizId-1].answer)) == keccak256(abi.encodePacked(ans))) {
             return true;
         } else {
-            console.log("Test");
             bets[quizId-1][msg.sender] -= quizzes[quizId-1].min_bet; // 정답이 틀릴 경우 베팅한 금액 만큼 차감
             vault_balance += quizzes[quizId-1].min_bet; // 정답이 틀릴 경우 컨트랙트 총 잔액은 베팅한 금액 만큼 증가
 
